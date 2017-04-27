@@ -19,8 +19,8 @@
     <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
       <!-- buttons -->
       <div class="nav navbar-nav hidden-xs">
-        <a href class="btn no-shadow navbar-btn" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
-          <i class="fa fa-dedent fa-fw"></i>
+        <a class="btn no-shadow navbar-btn" @click="toggleSidebar()">
+          <i class="fa fa-fw" :class="{'fa-dedent':!sidebar.opened,'fa-indent':sidebar.opened}"></i>
         </a>
         <a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
           <i class="icon-user fa-fw"></i>
@@ -250,7 +250,7 @@
             <div class="panel bg-white">
               <div class="panel-heading b-light bg-light"> <strong>You have
                   <span>2</span>
-                  notifications</strong> 
+                  notifications</strong>
               </div>
               <div class="list-group">
                 <a href class="media list-group-item">
@@ -322,12 +322,23 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
+
 export default {
   name: 'headerbar',
   data() {
     return {
       name: 'vue-admin',
     };
+  },
+  // beforeMount() {
+  //   this.toggleSidebar();
+  // },
+  computed: {
+    ...mapGetters(['sidebar']),
+  },
+  methods: {
+    ...mapActions(['toggleSidebar']),
   },
 };
 </script>
