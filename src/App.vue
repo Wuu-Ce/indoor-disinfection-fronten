@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{'app-aside-folded':sidebar.opened}">
     <header-bar></header-bar>
     <aside-menu></aside-menu>
     <settings></settings>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import HeaderBar from './components/Header';
 import AsideMenu from './components/Aside';
 import Settings from './components/Settings';
@@ -25,6 +26,9 @@ export default{
     AsideMenu,
     Settings,
     FooterBar,
+  },
+  computed: {
+    ...mapGetters(['sidebar']),
   },
 };
 </script>

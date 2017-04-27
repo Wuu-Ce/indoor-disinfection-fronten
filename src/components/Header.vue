@@ -19,7 +19,7 @@
     <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
       <!-- buttons -->
       <div class="nav navbar-nav hidden-xs">
-        <a class="btn no-shadow navbar-btn" @click="toggleSidebar()">
+        <a class="btn no-shadow navbar-btn" @click="toggleSidebar(!sidebar.opened)">
           <i class="fa fa-fw" :class="{'fa-dedent':!sidebar.opened,'fa-indent':sidebar.opened}"></i>
         </a>
         <a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">
