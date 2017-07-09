@@ -1,6 +1,7 @@
 <template>
   <div class="hello text-center m-t-lg">
-    <h1>{{ msg }}</h1>
+    <img src="../assets/logo.png" height="200" width="200" alt="">
+    <h1>{{ title }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -17,6 +18,10 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <p class="m-t-lg">
+      <a title="前端老徐 Github" href="https://github.com/waihaolaoxu" target="_blank" class="fa fa-github text-2x text-muted"></a>
+      <a title="前端老徐 Blog" href="http://www.loveqiao.com/" target="_blank" class="m-l-xs fa fa-home text-2x text-muted"></a>
+    </p>
   </div>
 </template>
 
@@ -25,7 +30,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      title: 'BootstrapVueAdmin'
     }
   }
 }
@@ -47,7 +52,7 @@ li {
   margin: 0 10px;
 }
 
-a {
+ul a {
   color: #42b983;
 }
 </style>
