@@ -11,17 +11,18 @@
         <i class="fa fa-btc"></i>
         <span class="hidden-folded m-l-xs">Vue</span>
       </a>
-      <!-- / brand --> </div>
+      <!-- / brand --> 
+      </div>
     <!-- / navbar header -->
 
     <!-- navbar collapse -->
     <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
       <!-- buttons -->
       <div class="nav navbar-nav hidden-xs">
-        <a href class="btn no-shadow navbar-btn">
+        <a class="btn no-shadow navbar-btn">
           <i class="fa fa-dedent fa-fw"></i>
         </a>
-        <a href class="btn no-shadow navbar-btn">
+        <a class="btn no-shadow navbar-btn">
           <i class="icon-user fa-fw"></i>
         </a>
       </div>
@@ -29,8 +30,8 @@
 
       <!-- link and dropdown -->
       <ul class="nav navbar-nav hidden-sm">
-        <li class="dropdown pos-stc">
-          <a href class="dropdown-toggle">
+        <li class="dropdown pos-stc" v-toggleClass="{class:'open',close:true}">
+          <a class="dropdown-toggle">
             <span>Mega</span>
             <span class="caret"></span>
           </a>
@@ -176,15 +177,16 @@
             </div>
           </div>
         </li>
-        <li class="dropdown" dropdown>
-          <a href class="dropdown-toggle">
+        <li class="dropdown"  v-toggleClass="{class:'open',close:true}">
+          <a class="dropdown-toggle">
             <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
             <span>New</span>
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="#">Projects</a>
+              <a href="javascript:alert(2)"
+>Projects</a>
             </li>
             <li>
               <a href>
@@ -225,13 +227,13 @@
       <!-- nabar right -->
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden-xs">
-          <a>
+          <a v-fullscreen>
             <i class="fa fa-expand fa-fw text"></i>
             <i class="fa fa-compress fa-fw text-active"></i>
           </a>
         </li>
-        <li class="dropdown">
-          <a href class="dropdown-toggle">
+        <li class="dropdown" v-toggleClass="{class:'open',close:true}">
+          <a class="dropdown-toggle">
             <i class="icon-bell fa-fw"></i>
             <span class="visible-xs-inline">Notifications</span>
             <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
@@ -244,7 +246,7 @@
                   notifications</strong> 
               </div>
               <div class="list-group">
-                <a href class="media list-group-item">
+                <a class="media list-group-item">
                   <span class="pull-left thumb-sm">
                     <img src="../../assets/app/img/a0.jpg" class="img-circle">
                   </span>
@@ -254,7 +256,7 @@
                     <small class="text-muted">10 minutes ago</small>
                   </span>
                 </a>
-                <a href class="media list-group-item">
+                <a class="media list-group-item">
                   <span class="media-body block m-b-none">
                     1.0 initial released
                     <br>
@@ -263,7 +265,7 @@
                 </a>
               </div>
               <div class="panel-footer text-sm">
-                <a href class="pull-right">
+                <a class="pull-right">
                   <i class="fa fa-cog"></i>
                 </a>
                 <a href="#notes">See all the notifications</a>
@@ -271,8 +273,8 @@
             </div>
           </div>
           <!-- / dropdown --> </li>
-        <li class="dropdown" dropdown>
-          <a href class="dropdown-toggle clear" dropdown-toggle>
+        <li class="dropdown"  v-toggleClass="{class:'open',close:true}">
+          <a class="dropdown-toggle clear">
             <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
               <img src="../../assets/app/img/a0.jpg" alt="...">
               <i class="on md b-white bottom"></i>
