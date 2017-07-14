@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Buttons from '@/components/ui/Buttons'
+import Bootstrap from '@/components/ui/Bootstrap'
 
 Vue.use(Router)
 
@@ -18,11 +19,14 @@ export default new Router({
         path: '/ui',
         name: 'ui',
         component: template,
-        children: [{
-            // 当 /user/:id/profile 匹配成功，
-            // UserProfile 会被渲染在 User 的 <router-view> 中
-            path: 'buttons',
-            component: Buttons
-        }]
+        children: [
+            {
+                path: 'buttons',
+                component: Buttons
+            },{
+                path: 'bootstrap',
+                component: Bootstrap
+            }
+        ]
     }]
 })
