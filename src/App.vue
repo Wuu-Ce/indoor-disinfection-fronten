@@ -8,8 +8,10 @@
         <!-- / menu -->
         <!-- content -->
         <div class="app-content">
-            <div class="app-content-body fade-in-up">
-                <router-view></router-view>
+            <div class="app-content-body">
+                <transition mode="out-in" enter-active-class="animated fadeInUp" leave-active-class="animated fadeInDown" >
+                    <router-view></router-view>
+                </transition>
             </div>
         </div>
         <!-- /content -->

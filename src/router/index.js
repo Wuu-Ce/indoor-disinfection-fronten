@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Buttons from '@/components/ui/Buttons'
 import Bootstrap from '@/components/ui/Bootstrap'
+import Icons from '@/components/ui/Icons'
 
 Vue.use(Router)
 
@@ -26,6 +27,9 @@ export default new Router({
             },{
                 path: 'bootstrap',
                 component: Bootstrap
+            },{
+                path: 'icons',
+                component: Icons
             }
         ]
     }]

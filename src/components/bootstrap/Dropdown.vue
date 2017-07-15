@@ -1,10 +1,9 @@
 <template>
     <div :class="{open:isOpen}">
-        <button class="btn" type="button" :class="bClass||'btn-default'" @click="toggle" v-if="!bDivision">
+        <button class="btn" type="button" :class="bClass||'btn-default'" v-if="!bDivision" @click="toggle">
             <slot name="title"></slot>
             <span class="caret"></span>
         </button>
-
         <button type="button" class="btn" :class="bClass||'btn-default'" v-if="bDivision"><slot name="title"></slot></button><button type="button" class="btn dropdown-toggle" :class="bClass||'btn-default'" v-if="bDivision" @click="toggle">
             <span class="caret"></span></button>
         <slot name="content"></slot>

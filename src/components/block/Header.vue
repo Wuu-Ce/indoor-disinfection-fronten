@@ -9,7 +9,7 @@
       <!-- brand -->
       <a href="#/" class="navbar-brand text-lt">
         <i class="fa fa-btc"></i>
-        <span class="hidden-folded m-l-xs">Vue</span>
+        <span class="hidden-folded m-l-xs">VueAdmin</span>
       </a>
       <!-- / brand --> 
       </div>

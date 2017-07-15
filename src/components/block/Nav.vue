@@ -5,7 +5,9 @@
             <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                 <span>{{item.group}}</span>
             </li>
-            <nav-item :navitem="item" v-for="item in item.data" :key="item.icon"></nav-item>
+            <nav-item :navitem="item" v-for="item in item.data" :key="item.icon">
+                
+            </nav-item>
         </ul>
     </div>
     <!-- / list -->
