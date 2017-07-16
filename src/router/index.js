@@ -10,7 +10,6 @@ import uiWidgets from '@/components/ui/Widgets'
 import uiPortlet from '@/components/ui/Portlet'
 import uiTimeline from '@/components/ui/Timeline'
 import tableStatic from '@/components/table/Static'
-import tableFootable from '@/components/table/Footable'
 
 Vue.use(Router)
 
@@ -55,9 +54,26 @@ export default new Router({
     children: [{
       path: 'static',
       component: tableStatic
-    },{
-      path: 'footable',
-      component: tableFootable
+    }]
+  },{
+    path: '/form',
+    name: 'form',
+    component: template,
+    children: [{
+      path: 'elements',
+      component:{
+        template: "<h1 class='text-center'>form elements</h1>"
+      }
+    }]
+  },{
+    path: '/echart',
+    name: 'echart',
+    component: template,
+    children: [{
+      path: 'baidu',
+      component:{
+        template: "<h1 class='text-center'>baidu echart</h1>"
+      }
     }]
   }]
 })
