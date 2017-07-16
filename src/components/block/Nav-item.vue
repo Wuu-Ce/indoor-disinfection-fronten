@@ -5,16 +5,16 @@
                       <i class="fa fa-fw fa-angle-right text"></i>
                       <i class="fa fa-fw fa-angle-down text-active"></i>
                     </span>
-            <i :class="navitem.icon"></i>
-            <span>{{navitem.group}}</span>
+            <i :class="navData.groupIcon"></i>
+            <span>{{navData.groupName}}</span>
         </a>
         <ul class="nav nav-sub dk">
             <li class="nav-sub-header">
                 <a>
-                    <span>{{navitem.group}}</span>
+                    <span>{{navData.groupName}}</span>
                 </a>
             </li>
-            <router-link :to="item.to" tag="li" active-class="active" v-for="item in navitem.data" :key="item.to"><a>{{item.name}}</a></router-link>
+            <slot></slot>
         </ul> 
 </li>
 </template>
@@ -23,10 +23,10 @@ export default {
     name: 'nav-item',
     data() {
         return {
-        	isShow:false
+        	isShow:this.navData.groupActive
         }
     },
-    props: ['navitem'],
+    props: ['navData'],
     methods:{
     	toggle:function(){
     		this.isShow=!this.isShow

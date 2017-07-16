@@ -205,7 +205,10 @@
           <div class="panel panel-default">
             <div class="panel-heading">Pagination</div>
             <div class="panel-body">
-                <v-navigation></v-navigation>
+                <p>当前页码：<strong class="text-danger">{{curPage}}</strong></p>
+                <v-navigation @change="pageChange" b-size="sm" :current-page="2" :total-items="100" :items-per-page="10" :boundary-links="false" ></v-navigation>
+                <v-navigation b-size="md" :current-page="2" :total-items="100" :items-per-page="10" :boundary-links="false" ></v-navigation>
+                <v-navigation b-size="lg" :current-page="2" :total-items="100" :items-per-page="10" :boundary-links="false" ></v-navigation>
             </div>
           </div>
         </div>
@@ -234,26 +237,30 @@ export default {
       alert: false,
       confirm: false,
       prompt: false,
+      curPage:0
     }
   },
   methods: {
-    tabChange: function(index) {
+    tabChange(index) {
       if (index == 2) {
         alert('绑定回调事件--' + index)
       }
     },
-    modalClose: function() {
+    modalClose() {
       alert(1)
     },
-    confirmok: function() {
+    confirmok() {
       this.confirm = !this.confirm;
       this.alertTxt = "您很有眼光！";
       this.alert = true;
     },
-    promptok: function(t) {
+    promptok(t) {
       this.prompt = !this.prompt;
       this.alertTxt = t;
       this.alert = true;
+    },
+    pageChange(n){
+      this.curPage=n
     }
   },
   components: {

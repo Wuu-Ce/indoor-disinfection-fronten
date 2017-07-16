@@ -1,36 +1,63 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Buttons from '@/components/ui/Buttons'
-import Bootstrap from '@/components/ui/Bootstrap'
-import Icons from '@/components/ui/Icons'
+
+import uiHello from '@/components/Hello'
+import uiButtons from '@/components/ui/Buttons'
+import uiBootstrap from '@/components/ui/Bootstrap'
+import uiIcons from '@/components/ui/Icons'
+import uiGrid from '@/components/ui/Grid'
+import uiWidgets from '@/components/ui/Widgets'
+import uiPortlet from '@/components/ui/Portlet'
+import uiTimeline from '@/components/ui/Timeline'
+import tableStatic from '@/components/table/Static'
+import tableFootable from '@/components/table/Footable'
 
 Vue.use(Router)
 
 const template = {
-    template: "<router-view></router-view>"
+  template: "<router-view></router-view>"
 }
 
 export default new Router({
-    routes: [{
-        path: '/',
-        name: 'Hello',
-        component: Hello
+  routes: [{
+    path: '/',
+    component: uiHello
+  }, {
+    path: '/ui',
+    name: 'ui',
+    component: template,
+    children: [{
+      path: 'buttons',
+      component: uiButtons
     }, {
-        path: '/ui',
-        name: 'ui',
-        component: template,
-        children: [
-            {
-                path: 'buttons',
-                component: Buttons
-            },{
-                path: 'bootstrap',
-                component: Bootstrap
-            },{
-                path: 'icons',
-                component: Icons
-            }
-        ]
+      path: 'bootstrap',
+      component: uiBootstrap
+    }, {
+      path: 'icons',
+      component: uiIcons
+    }, {
+      path: 'grid',
+      component: uiGrid
+    }, {
+      path: 'widgets',
+      component: uiWidgets
+    }, {
+      path: 'portlet',
+      component: uiPortlet
+    }, {
+      path: 'timeline',
+      component: uiTimeline
     }]
+  }, {
+    path: '/table',
+    name: 'table',
+    component: template,
+    children: [{
+      path: 'static',
+      component: tableStatic
+    },{
+      path: 'footable',
+      component: tableFootable
+    }]
+  }]
 })

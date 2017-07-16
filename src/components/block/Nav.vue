@@ -1,79 +1,40 @@
 <template>
     <!-- list -->
     <div class="navi">
-        <ul class="nav" v-for="item in menu">
+        <ul class="nav">
             <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-                <span>{{item.group}}</span>
+                <span>组件</span>
             </li>
-            <nav-item :navitem="item" v-for="item in item.data" :key="item.icon">
-                
+            <nav-item :nav-data="{groupName:'UI套件',groupIcon:'glyphicon glyphicon-briefcase',groupActive:curRoute=='ui'}">
+                <router-link to="/ui/buttons" tag="li" active-class="active"><a>按钮</a></router-link>
+                <router-link to="/ui/icons" tag="li" active-class="active"><a>图标</a></router-link>
+                <router-link to="/ui/grid" tag="li" active-class="active"><a>网格</a></router-link>
+                <router-link to="/ui/widgets" tag="li" active-class="active"><a>小部件</a></router-link>
+                <router-link to="/ui/bootstrap" tag="li" active-class="active"><a>Bootstrap</a></router-link>
+                <router-link to="/ui/portlet" tag="li" active-class="active"><a>Portlet</a></router-link>
+                <router-link to="/ui/timeline" tag="li" active-class="active"><a>时间线</a></router-link>
+            </nav-item>
+            <nav-item :nav-data="{groupName:'表格',groupIcon:'glyphicon glyphicon-list',groupActive:curRoute=='table'}">
+                <router-link to="/table/static" tag="li" active-class="active"><a>静态表格</a></router-link>
+                <!-- <router-link to="/table/footable" tag="li" active-class="active"><a>Foottable</a></router-link> -->
+            </nav-item>
+            <nav-item :nav-data="{groupName:'表单',groupIcon:'glyphicon glyphicon-edit',groupActive:curRoute=='form'}">
+                <router-link to="/form/elements" tag="li" active-class="active"><a>表单元素</a></router-link>
+            </nav-item>
+            <nav-item :nav-data="{groupName:'Echarts',groupIcon:'glyphicon glyphicon-signal',groupActive:curRoute=='echarts'}">
+                <router-link to="/echart/baidu" tag="li" active-class="active"><a>百度Echarts</a></router-link>
             </nav-item>
         </ul>
     </div>
     <!-- / list -->
 </template>
 <script>
-const menu = [{
-    group: "组件",
-    data: [{
-        group: "UI 套件",
-        icon: "glyphicon glyphicon-briefcase",
-        data: [{
-            name: "按钮",
-            to: "/ui/buttons"
-        }, {
-            name: "图标",
-            to: "/ui/icons"
-        }, {
-            name: "网格",
-            to: "/ui/grid"
-        }, {
-            name: "小部件",
-            to: "/ui/widgets"
-        }, {
-            name: "Bootstrap",
-            to: "/ui/bootstrap"
-        }, {
-            name: "Portlet",
-            to: "/ui/portlet"
-        }, {
-            name: "时间线",
-            to: "/ui/timeline"
-        },]
-    },{
-        group: "表格",
-        icon: "glyphicon glyphicon-list",
-        data: [{
-            name: "静态表格",
-            to: "/table/static"
-        }, {
-            name: "Foottable",
-            to: "/ui/foottable"
-        }]
-    },{
-        group: "表单",
-        icon: "glyphicon glyphicon-edit",
-        data: [{
-            name: "表单元素",
-            to: "/form/elements"
-        }]
-    },{
-        group: "图表",
-        icon: "glyphicon glyphicon-signal",
-        data: [{
-            name: "百度Echarts",
-            to: "/echart/baidu"
-        }]
-    }]
-}]
-
 import navItem from './Nav-item.vue'
 
 export default {
     name: 'nav',
     data() {
         return {
-            menu:menu,
             curRoute: 'index'
         }
     },
@@ -88,8 +49,10 @@ export default {
     },
     methods: {
         setCurNav() {
-            this.curRoute = this.$route.name;
-            console.log(this.$route)
+            //取自路由配置里的菜单分组name值
+            this.curRoute = this.$route.matched[0].name; 
+            // console.log(this.curRoute)
+            // console.log(this.$route)
         }
     }
 }
