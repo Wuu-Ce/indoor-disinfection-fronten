@@ -11,8 +11,7 @@
               <span class="text-lt">The Restaurant</span>
             </div>
             <div class="item m-l-n-xxs m-r-n-xxs">
-              <div ng-init="x = 3" class="top text-right padder m-t-xs w-full">
-                <rating ng-model="x" max="5" state-on="'fa fa-star text-white'" state-off="'fa fa-star-o text-white'"></rating>
+              <div class="top text-right padder m-t-xs w-full">
               </div>
               <div class="center text-center w-full" style="margin-top:-60px">
                 <div class="inline">
@@ -23,7 +22,7 @@
                 <div>Restaurant</div>
                 <div>9:00 am - 12:00 pm</div>
               </div>
-              <img src="img/c0.jpg" class="img-full">
+              <img src="../../assets/app/img/c0.jpg" class="img-full">
             </div>
             <div class="hbox text-center b-b b-light text-sm">
               <a href class="col padder-v text-muted b-r b-light">

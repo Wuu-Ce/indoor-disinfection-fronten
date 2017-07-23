@@ -1,33 +1,31 @@
 <template>
   <div class="app-header navbar">
     <!-- navbar header -->
-    <div class="navbar-header bg-black">
+    <div class="navbar-header" :class="settings.navbarHeaderColor">
       <button class="pull-right visible-xs dk"> <i class="glyphicon glyphicon-cog"></i>
       </button>
-      <button class="pull-right visible-xs" > <i class="glyphicon glyphicon-align-justify"></i>
+      <button class="pull-right visible-xs"> <i class="glyphicon glyphicon-align-justify"></i>
       </button>
       <!-- brand -->
       <a href="#/" class="navbar-brand text-lt">
         <i class="fa fa-btc"></i>
         <span class="hidden-folded m-l-xs">VueAdmin</span>
       </a>
-      <!-- / brand --> 
-      </div>
+      <!-- / brand -->
+    </div>
     <!-- / navbar header -->
-
     <!-- navbar collapse -->
-    <div class="collapse pos-rlt navbar-collapse box-shadow bg-white-only">
+    <div class="collapse pos-rlt navbar-collapse box-shadow" :class="settings.navbarCollapseColor">
       <!-- buttons -->
       <div class="nav navbar-nav hidden-xs">
-        <a class="btn no-shadow navbar-btn">
-          <i class="fa fa-dedent fa-fw"></i>
+        <a class="btn no-shadow navbar-btn" @click="toggleSidebar()">
+          <i class="fa fa-dedent fa-fw" :class="{'fa-dedent':sidebar,'fa-indent':!sidebar}"></i>
         </a>
         <a class="btn no-shadow navbar-btn">
           <i class="icon-user fa-fw"></i>
         </a>
       </div>
       <!-- / buttons -->
-
       <!-- link and dropdown -->
       <ul class="nav navbar-nav hidden-sm">
         <li class="dropdown pos-stc" v-toggleClass="{class:'open',close:true}">
@@ -177,7 +175,7 @@
             </div>
           </div>
         </li>
-        <li class="dropdown"  v-toggleClass="{class:'open',close:true}">
+        <li class="dropdown" v-toggleClass="{class:'open',close:true}">
           <a class="dropdown-toggle">
             <i class="fa fa-fw fa-plus visible-xs-inline-block"></i>
             <span>New</span>
@@ -185,8 +183,7 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="javascript:alert(2)"
->Projects</a>
+              <a href="javascript:alert(2)">Projects</a>
             </li>
             <li>
               <a href>
@@ -208,9 +205,8 @@
         </li>
       </ul>
       <!-- / link and dropdown -->
-
       <!-- search form -->
-      <form class="navbar-form navbar-form-sm navbar-left shift" >
+      <form class="navbar-form navbar-form-sm navbar-left shift">
         <div class="form-group">
           <div class="input-group">
             <input type="text" class="form-control input-sm bg-light no-border rounded padder" placeholder="Search projects...">
@@ -223,14 +219,10 @@
         </div>
       </form>
       <!-- / search form -->
-
       <!-- nabar right -->
       <ul class="nav navbar-nav navbar-right">
         <li class="hidden-xs">
-          <a v-fullscreen>
-            <i class="fa fa-expand fa-fw text"></i>
-            <i class="fa fa-compress fa-fw text-active"></i>
-          </a>
+          <v-fullscreen></v-fullscreen>
         </li>
         <li class="dropdown" v-toggleClass="{class:'open',close:true}">
           <a class="dropdown-toggle">
@@ -243,7 +235,7 @@
             <div class="panel bg-white">
               <div class="panel-heading b-light bg-light"> <strong>You have
                   <span>2</span>
-                  notifications</strong> 
+                  notifications</strong>
               </div>
               <div class="list-group">
                 <a class="media list-group-item">
@@ -272,8 +264,9 @@
               </div>
             </div>
           </div>
-          <!-- / dropdown --> </li>
-        <li class="dropdown"  v-toggleClass="{class:'open',close:true}">
+          <!-- / dropdown -->
+        </li>
+        <li class="dropdown" v-toggleClass="{class:'open',close:true}">
           <a class="dropdown-toggle clear">
             <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
               <img src="../../assets/app/img/a0.jpg" alt="...">
@@ -308,24 +301,40 @@
               <a>Logout</a>
             </li>
           </ul>
-          <!-- / dropdown --> </li>
+          <!-- / dropdown -->
+        </li>
       </ul>
-      <!-- / navbar right --> </div>
-    <!-- / navbar collapse --> </div>
+      <!-- / navbar right -->
+    </div>
+    <!-- / navbar collapse -->
+  </div>
 </template>
-
 <script>
+import fullscreen from './Header-fullscreen'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'header',
-  data () {
+  data() {
     return {
       msg: 'Nav'
     }
+  },
+  computed: {
+    ...mapGetters([ 'sidebar','settings'])
+  },
+  methods: {
+    ...mapActions([
+      'toggleSidebar'
+    ])
+  },
+  components:{
+    'v-fullscreen':fullscreen
   }
 }
-</script>
 
+</script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  
+
+
 </style>

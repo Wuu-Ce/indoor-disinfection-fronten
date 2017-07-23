@@ -1,9 +1,11 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import App from './App'
 import router from './router'
-import VueResource from 'vue-resource'
+import store from './store'
+
 Vue.use(VueResource)
 
 //App框架
@@ -52,47 +54,11 @@ Vue.directive('toggleClass', {
     }
 })
 
-//全屏
-Vue.directive('fullscreen',{
-	bind:function(el, binding){
-		function fullscreenElement(){
-			var fullscreenEle = document.fullscreenElement ||
-		    	document.mozFullScreenElement ||
-		    	document.webkitFullscreenElement;
-			//注意：要在用户授权全屏后才能获取全屏的元素，否则 fullscreenEle为null
-			// console.log("全屏元素：" + fullscreenEle);
-			return fullscreenEle;
-		}
-		var element = document.documentElement;
-		el.onclick=function(){
-			console.log(el)
-			if(fullscreenElement()){
-				 if (document.exitFullscreen) {
-				     document.exitFullscreen();
-				 } else if (document.mozCancelFullScreen) { //兼容moz
-				     document.mozCancelFullScreen();
-				 } else if (document.webkitExitFullscreen) { //兼容webkit
-				     document.webkitExitFullscreen();
-				 }
-			}else{
-				if(element.requestFullscreen) {
-					element.requestFullscreen();
-				} else if(element.mozRequestFullScreen) {
-					element.mozRequestFullScreen();
-				} else if(element.webkitRequestFullscreen) {
-					element.webkitRequestFullscreen();
-				} else if(element.msRequestFullscreen) {
-					element.msRequestFullscreen();
-				}
-			}
-		}
-	}
-})
-
 // 实例化
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: { App }
 })
