@@ -1,32 +1,24 @@
 <template>
+
   <div class="app-aside hidden-xs" :class="settings.asideColor">
     <div class="aside-wrap">
       <div class="navi-wrap">
         <!-- list -->
         <nav class="navi">
           <ul class="nav">
-            <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-              <span>组件</span>
-            </li>
-            <nav-item :nav-data="{groupName:'UI套件',groupIcon:'glyphicon glyphicon-briefcase',groupActive:curRoute=='ui'}">
-              <router-link to="/ui/buttons" tag="li" active-class="active"><a>按钮</a></router-link>
-              <router-link to="/ui/icons" tag="li" active-class="active"><a>图标</a></router-link>
-              <router-link to="/ui/grid" tag="li" active-class="active"><a>网格</a></router-link>
-              <router-link to="/ui/widgets" tag="li" active-class="active"><a>小部件</a></router-link>
-              <router-link to="/ui/bootstrap" tag="li" active-class="active"><a>Bootstrap</a></router-link>
-              <router-link to="/ui/portlet" tag="li" active-class="active"><a>Portlet</a></router-link>
-              <router-link to="/ui/timeline" tag="li" active-class="active"><a>时间线</a></router-link>
-            </nav-item>
-            <nav-item :nav-data="{groupName:'表格',groupIcon:'glyphicon glyphicon-list',groupActive:curRoute=='table'}">
-              <router-link to="/table/static" tag="li" active-class="active"><a>静态表格</a></router-link>
-              <!-- <router-link to="/table/footable" tag="li" active-class="active"><a>Foottable</a></router-link> -->
-            </nav-item>
-            <nav-item :nav-data="{groupName:'表单',groupIcon:'glyphicon glyphicon-edit',groupActive:curRoute=='form'}">
-              <router-link to="/form/elements" tag="li" active-class="active"><a>表单元素</a></router-link>
-            </nav-item>
-            <nav-item :nav-data="{groupName:'Echarts',groupIcon:'glyphicon glyphicon-signal',groupActive:curRoute=='echarts'}">
-              <router-link to="/echart/baidu" tag="li" active-class="active"><a>百度Echarts</a></router-link>
-            </nav-item>
+            <router-link
+              tag="li"
+              :key="path.id"
+              :to="path.path"
+              active-class="active"
+              class="btn table-item"
+              v-for="path in routPath"
+              @click="setCurTab(path.id)"
+              :class="{active:showTabId=== path.id}"
+            >
+              <i class="fa inline pull-left" :class="path.icon"></i>
+              <span class="pull-left routerLink">{{ path.name }}</span>
+            </router-link>
           </ul>
         </nav>
         <!-- / list -->
@@ -37,19 +29,54 @@
 <script>
 import navItem from './Nav-item.vue'
 import { mapGetters, mapActions } from 'vuex'
+import app from "../../App";
+import device from "../table/device";
+import tab from "../bootstrap/Tab"
 
 export default {
-  name: 'nav',
+  name: 'navT',
   data() {
     return {
-      curRoute: 'index'
+      routPath: [
+        {
+          id: 0,
+          name: "消毒",
+          icon: 'fa-support',
+          path: '/home/table/disinfect'
+        },
+        {
+          id: 1,
+          name: "设备",
+          icon: 'fa-sun-o',
+          path: '/home/table/device'
+        },
+        {
+          id: 2,
+          name: "环境",
+          icon: 'fa-cube',
+          path: '/home/table/environment'
+        },
+        {
+          id: 3,
+          name: "关于",
+          icon: 'icon-paper-plane',
+          path: '/home/table/about'
+        }],
+      showTabId: -1,
+      err_msg: [
+        "无法获取设备列表！"
+      ]
+
     }
   },
   components: {
-    'nav-item': navItem
+    'nav-item': navItem,
+    "v-tab": tab
   },
   created() {
     this.setCurNav();
+  },
+  mounted() {
   },
   computed: {
     ...mapGetters(['settings'])
@@ -58,6 +85,9 @@ export default {
     '$route': 'setCurNav'
   },
   methods: {
+    setCurTab(id) {
+      this.showTabId = id;
+    },
     setCurNav() {
       //取自路由配置里的菜单分组name值
       this.curRoute = this.$route.matched[0].name;
@@ -70,6 +100,22 @@ export default {
 </script>
 <!-- Add "scoped " attribute to limit CSS to this component only -->
 <style>
-
+.table-item{
+  height: 40px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.btn.active  {
+  background: rgba(205, 231, 230, 0.1);
+  box-shadow: none;
+  color: #56c4c8;
+}
+.btn:hover{
+  color: #56c4c8;
+  box-shadow: none;
+}
+.routerLink{
+  margin-left: 30px;
+}
 
 </style>

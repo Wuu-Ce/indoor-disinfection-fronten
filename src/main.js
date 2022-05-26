@@ -5,8 +5,11 @@ import VueResource from 'vue-resource'
 import App from './App'
 import router from './router'
 import store from './store'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(VueResource)
+Vue.use(ElementUI)
 
 //App框架
 import './assets/app/css/bootstrap.css'
@@ -15,6 +18,9 @@ import './assets/app/css//font-awesome.min.css'
 import './assets/app/css/simple-line-icons.css'
 import './assets/app/css/font.css'
 import './assets/app/css/app.css'
+import 'jquery'
+import 'bootstrap'
+import 'element-ui'
 
 Vue.config.productionTip = false
 
@@ -40,7 +46,7 @@ Vue.directive('toggleClass', {
             }
         }
         if(binding.value.close){
-	        var doc=document;
+	        const doc=document;
 	        if (doc.addEventListener) { //所有主流浏览器，除了 IE 8 及更早 IE版本
 	              doc.addEventListener("click", function(){
 	              	 el.className = el.className.replace(' ' + binding.value.class, '');

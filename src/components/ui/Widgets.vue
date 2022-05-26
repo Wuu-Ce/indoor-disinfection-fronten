@@ -154,40 +154,40 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <div class="clearfix">
-                    <a href class="pull-left thumb-md avatar b-3x m-r">
-                  <img src="../../assets/app/img/a2.jpg" alt="...">
-                </a>
-                    <div class="clear">
-                      <div class="h3 m-t-xs m-b-xs">
-                        John.Smith
-                        <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
-                      </div>
-                      <small class="text-muted">Art director</small>
+      </div><div class="row">
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="clearfix">
+                  <a href class="pull-left thumb-md avatar b-3x m-r">
+                    <img src="../../assets/app/img/a2.jpg" alt="...">
+                  </a>
+                  <div class="clear">
+                    <div class="h3 m-t-xs m-b-xs">
+                      John.Smith
+                      <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
                     </div>
+                    <small class="text-muted">Art director</small>
                   </div>
                 </div>
-                <div class="list-group no-radius alt">
-                  <a class="list-group-item" href>
-                <span class="badge bg-success">25</span>
-                <i class="fa fa-comment fa-fw text-muted"></i> 
-                Messages
-              </a>
-                  <a class="list-group-item" href>
+              </div>
+              <div class="list-group no-radius alt">
+                <a class="list-group-item" href>
+                  <span class="badge bg-success">25</span>
+                  <i class="fa fa-comment fa-fw text-muted"></i>
+                  Messages
+                </a>
+
+                      <a class="list-group-item" href>
                 <span class="badge bg-info">16</span>
-                <i class="fa fa-envelope fa-fw text-muted"></i> 
+                <i class="fa fa-envelope fa-fw text-muted"></i>
                 Inbox
               </a>
                   <a class="list-group-item" href>
                 <span class="badge bg-light">5</span>
-                <i class="fa fa-eye fa-fw text-muted"></i> 
+                <i class="fa fa-eye fa-fw text-muted"></i>
                 Profile visits
               </a>
                 </div>
@@ -383,7 +383,7 @@
                   <div class="m-t-sm">
                     <a href ui-toggle-class class="btn btn-default btn-xs active">
                   <i class="fa fa-star-o text-muted text"></i>
-                  <i class="fa fa-star text-danger text-active"></i> 
+                  <i class="fa fa-star text-danger text-active"></i>
                   Like
                 </a>
                     <a href class="btn btn-default btn-xs">
@@ -450,7 +450,7 @@
                   <div class="m-t-sm">
                     <a href data-toggle="class" class="btn btn-default btn-xs">
                   <i class="fa fa-star-o text-muted text"></i>
-                  <i class="fa fa-star text-danger text-active"></i> 
+                  <i class="fa fa-star text-danger text-active"></i>
                   Like
                 </a>
                     <a href class="btn btn-default btn-xs"><i class="fa fa-mail-reply text-muted"></i> Reply</a>

@@ -8,8 +8,8 @@
       </button>
       <!-- brand -->
       <a href="#/" class="navbar-brand text-lt">
-        <i class="fa fa-btc"></i>
-        <span class="hidden-folded m-l-xs">VueAdmin</span>
+        <i class="fa fa-adjust"></i>
+        <span class="hidden-folded m-l-xs">室内消毒管理</span>
       </a>
       <!-- / brand -->
     </div>
@@ -19,7 +19,11 @@
       <!-- buttons -->
       <div class="nav navbar-nav hidden-xs">
         <a class="btn no-shadow navbar-btn" @click="toggleSidebar()">
-          <i class="fa fa-dedent fa-fw" :class="{'fa-dedent':sidebar,'fa-indent':!sidebar}"></i>
+          <i
+            class="fa fa-dedent fa-fw"
+            :class="{'fa-dedent':sidebar,'fa-indent':!sidebar}"
+            @click="foldAside"
+          ></i>
         </a>
         <a class="btn no-shadow navbar-btn">
           <i class="icon-user fa-fw"></i>
@@ -139,7 +143,7 @@
                       <li>
                         <a href>
                           <i class="fa fa-fw fa-angle-right text-muted m-r-xs"></i>
-                          Bootstap
+                          Bootstrap
                         </a>
                       </li>
                       <li>
@@ -272,7 +276,7 @@
               <img src="../../assets/app/img/a0.jpg" alt="...">
               <i class="on md b-white bottom"></i>
             </span>
-            <span class="hidden-sm hidden-md">John.Smith</span> <b class="caret"></b>
+            <span class="hidden-sm hidden-md">{{ name }}</span> <b class="caret"></b>
           </a>
           <!-- dropdown -->
           <ul class="dropdown-menu animated fadeInRight w">
@@ -298,7 +302,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <a>Logout</a>
+              <a @click="logout()">Logout</a>
             </li>
           </ul>
           <!-- / dropdown -->
@@ -312,11 +316,13 @@
 <script>
 import fullscreen from './Header-fullscreen'
 import { mapGetters, mapActions } from 'vuex'
+import app from "../../App";
 export default {
-  name: 'header',
+  name: 'v_header',
   data() {
     return {
-      msg: 'Nav'
+      msg: 'Nav',
+      name: app.username
     }
   },
   computed: {
@@ -325,7 +331,14 @@ export default {
   methods: {
     ...mapActions([
       'toggleSidebar'
-    ])
+    ]),
+    logout(){
+      sessionStorage.removeItem("username");
+      this.$router.push('/login/sign');
+    },
+    foldAside() {
+      this.$store.state.settings.asideFolded=!this.$store.state.settings.asideFolded;
+    }
   },
   components:{
     'v-fullscreen':fullscreen

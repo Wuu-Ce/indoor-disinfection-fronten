@@ -18,12 +18,20 @@ import app from './modules/app'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  state: {},
+  state: {
+    username: sessionStorage.getItem("username") || "",
+    accessToken: sessionStorage.getItem("accessToken") || ""
+  },
   actions,
   getters,
   modules: {
     app
   },
-  mutations: {}
+  mutations: {
+    set_username(state, username){
+      sessionStorage.setItem("username", username)
+      state.username = username
+    }
+  }
 })
 export default store

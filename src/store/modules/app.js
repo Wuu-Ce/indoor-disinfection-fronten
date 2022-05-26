@@ -11,10 +11,10 @@ import * as types from '../mutation-types'
 const state = {
   sidebar: true,
   settings: {
-    themeID: 1,
-    navbarHeaderColor: 'bg-black',
+    themeID: 3,
+    navbarHeaderColor: 'bg-primary',
     navbarCollapseColor: 'bg-white-only',
-    asideColor: 'bg-black',
+    asideColor: 'bg-dark',
     headerFixed: true,
     asideFixed: false,
     asideFolded: false,
@@ -33,7 +33,7 @@ const mutations = {
   },
   [types.SETTINGS](state, data) {
       state.settings = data
-  } 
+  }
 }
 
 export default {

@@ -1,60 +1,60 @@
 <template>
   <div>
     <div class="bg-light lter b-b wrapper-md">
-      <h1 class="m-n font-thin h3">Static Table</h1>
+      <h1 class="m-n font-thin h3">客厅</h1>
     </div>
     <div class="wrapper-md">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-10">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <span class="label bg-danger pull-right m-t-xs">4 left</span> Tasks
+              <span class="label bg-danger pull-right m-t-xs">4 left</span> 环境参数
             </div>
             <table class="table table-striped m-b-none">
               <thead>
-                <tr>
-                  <th>Progress</th>
-                  <th>Item</th>
-                </tr>
+              <tr>
+                <th>值</th>
+                <th>项目</th>
+              </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>
-                    <div class="progress progress-sm progress-striped active m-t-xs m-b-none">
-                      <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
-                    </div>
-                  </td>
-                  <td>App prototype design</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="progress progress-xs m-t-xs m-b-none">
-                      <div class="progress-bar bg-info" data-toggle="tooltip" data-original-title="40%" style="width: 40%"></div>
-                    </div>
-                  </td>
-                  <td>Design documents</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="progress progress-xs m-t-xs m-b-none">
-                      <div class="progress-bar bg-warning" data-toggle="tooltip" data-original-title="20%" style="width: 20%"></div>
-                    </div>
-                  </td>
-                  <td>UI toolkit</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="progress progress-xs m-t-xs m-b-none">
-                      <div class="progress-bar bg-danger" data-toggle="tooltip" data-original-title="15%" style="width: 15%"></div>
-                    </div>
-                  </td>
-                  <td>Testing</td>
-                </tr>
+              <tr>
+                <td>
+                  <div class="progress progress-sm progress-striped active m-t-xs m-b-none">
+                    <div class="progress-bar bg-success" data-toggle="tooltip" data-original-title="80%" style="width: 80%"></div>
+                  </div>
+                </td>
+                <td>温度</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="progress progress-xs m-t-xs m-b-none">
+                    <div class="progress-bar bg-info" data-toggle="tooltip" data-original-title="40%" style="width: 40%"></div>
+                  </div>
+                </td>
+                <td>湿度</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="progress progress-xs m-t-xs m-b-none">
+                    <div class="progress-bar bg-warning" data-toggle="tooltip" data-original-title="20%" style="width: 20%"></div>
+                  </div>
+                </td>
+                <td>PM2.5</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="progress progress-xs m-t-xs m-b-none">
+                    <div class="progress-bar bg-danger" data-toggle="tooltip" data-original-title="15%" style="width: 15%"></div>
+                  </div>
+                </td>
+                <td>气压</td>
+              </tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class="col-sm-6">
+        <!-- <div class="col-sm-6">
           <div class="panel panel-default">
             <div class="panel-heading">Stats</div>
             <table class="table table-striped m-b-none">
@@ -260,7 +260,7 @@
               </ul>
             </div>
           </div>
-        </footer>
+        </footer> -->
       </div>
     </div>
   </div>

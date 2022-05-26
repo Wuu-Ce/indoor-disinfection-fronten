@@ -15,7 +15,7 @@
                 </a>
             </li>
             <slot></slot>
-        </ul> 
+        </ul>
 </li>
 </template>
 <script>

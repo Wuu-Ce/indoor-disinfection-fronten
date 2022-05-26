@@ -51,8 +51,8 @@
       <div class="row row-sm">
         <div class="col-xs-6">
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-black'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-black';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-black';
          ">
             <input type="radio" name="a" v-model="setting.themeID" value="1">
@@ -66,8 +66,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-dark'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-dark';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-dark';
          ">
             <input type="radio" name="a" v-model="setting.themeID" value="13">
@@ -81,8 +81,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-white-only'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-white-only';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-black';
          ">
             <input type="radio" v-model="setting.themeID" value="2">
@@ -96,8 +96,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-primary'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-primary';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-dark';
          ">
             <input type="radio" v-model="setting.themeID" value="3">
@@ -111,8 +111,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-info'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-info';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-black';
          ">
             <input type="radio" v-model="setting.themeID" value="4">
@@ -126,8 +126,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-success'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-success';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-dark';
          ">
             <input type="radio" v-model="setting.themeID" value="5">
@@ -141,8 +141,8 @@
             </span>
           </label>
           <label class="i-checks block" @click="
-          setting.navbarHeaderColor='bg-danger'; 
-          setting.navbarCollapseColor='bg-white-only'; 
+          setting.navbarHeaderColor='bg-danger';
+          setting.navbarCollapseColor='bg-white-only';
           setting.asideColor='bg-dark';
          ">
             <input type="radio" v-model="setting.themeID" value="6">
@@ -158,8 +158,8 @@
         </div>
         <div class="col-xs-6">
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-black'; 
-          setting.navbarCollapseColor='bg-black'; 
+          setting.navbarHeaderColor='bg-black';
+          setting.navbarCollapseColor='bg-black';
           setting.asideColor='bg-white b-r';
          ">
             <input type="radio" v-model="setting.themeID" value="7">
@@ -173,8 +173,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-dark'; 
-          setting.navbarCollapseColor='bg-dark'; 
+          setting.navbarHeaderColor='bg-dark';
+          setting.navbarCollapseColor='bg-dark';
           setting.asideColor='bg-light';
          ">
             <input type="radio" name="a" v-model="setting.themeID" value="14">
@@ -188,8 +188,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-info dker'; 
-          setting.navbarCollapseColor='bg-info dker'; 
+          setting.navbarHeaderColor='bg-info dker';
+          setting.navbarCollapseColor='bg-info dker';
           setting.asideColor='bg-light dker b-r';
          ">
             <input type="radio" v-model="setting.themeID" value="8">
@@ -203,8 +203,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-primary'; 
-          setting.navbarCollapseColor='bg-primary'; 
+          setting.navbarHeaderColor='bg-primary';
+          setting.navbarCollapseColor='bg-primary';
           setting.asideColor='bg-dark';
          ">
             <input type="radio" v-model="setting.themeID" value="9">
@@ -218,8 +218,8 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-info dker'; 
-          setting.navbarCollapseColor='bg-info dk'; 
+          setting.navbarHeaderColor='bg-info dker';
+          setting.navbarCollapseColor='bg-info dk';
           setting.asideColor='bg-black';
          ">
             <input type="radio" v-model="setting.themeID" value="10">
@@ -233,7 +233,7 @@
             </span>
           </label>
           <label class="i-checks block m-b" @click="
-          setting.navbarHeaderColor='bg-success'; 
+          setting.navbarHeaderColor='bg-success';
           setting.navbarCollapseColor='bg-success';
           setting.asideColor='bg-dark';
           ">
@@ -248,8 +248,8 @@
             </span>
           </label>
           <label class="i-checks block" @click="
-          setting.navbarHeaderColor='bg-danger dker bg-gd'; 
-          setting.navbarCollapseColor='bg-danger dker bg-gd'; 
+          setting.navbarHeaderColor='bg-danger dker bg-gd';
+          setting.navbarCollapseColor='bg-danger dker bg-gd';
           setting.asideColor='bg-dark';
          ">
             <input type="radio" v-model="setting.themeID" value="12">
@@ -290,7 +290,7 @@ export default {
   },
   watch: {
     setting:{
-        handler: function (val, oldVal) { 
+        handler: function (val, oldVal) {
             this.settings(val)
         },
         deep: true
